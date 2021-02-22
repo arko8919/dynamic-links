@@ -1,4 +1,12 @@
 /* social media */
+footer {
+    margin-top: 4rem;
+}
+
+footer p {
+    color: rgb(190, 216, 212);
+}
+
 .social-media {
     display: flex;
     flex-flow: row nowrap;
@@ -28,10 +36,10 @@
 }
 
 .social-media li:hover {
-    box-shadow: 0 .125rem 2px #5D2E46,
-    0 -.125rem .125rem #5D2E46,
-    .125rem 0 .125rem #5D2E46,
-    -.125rem 0 .125rem #5D2E46;
+    box-shadow: 0 .125rem 2px rgb(32, 129, 195),
+    0 -.125rem .125rem rgb(32, 129, 195),
+    .125rem 0 .125rem rgb(32, 129, 195),
+    -.125rem 0 .125rem rgb(32, 129, 195);
     border-radius: .3125rem;
 }
 

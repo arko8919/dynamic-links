@@ -1,3 +1,10 @@
 h1 {
-    font-family: 'Hanalei', cursive;
+    color: rgb(190, 216, 212);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-shadow: -1px 1px 0 rgb(32, 129, 195),
+    1px 1px 0 rgb(32, 129, 195),
+    1px -1px 0 rgb(32, 129, 195),
+    -1px -1px 0 rgb(32, 129, 195);
+
 }

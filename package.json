@@ -1,0 +1,20 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "dynamic links",
+  "main": "script.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arko8919/dynamic-links.git"
+  },
+  "author": "Artur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arko8919/dynamic-links/issues"
+  },
+  "homepage": "https://github.com/arko8919/dynamic-links#readme",
+  "dependencies": {}
+}
