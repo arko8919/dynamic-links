@@ -4,7 +4,8 @@
   "description": "dynamic links",
   "main": "script.js",
   "scripts": {
-    "test": "npm test"
+    "comb": "csscomb src/sass",
+    "sass": "sass src/style.scss src/main.css --watch"
   },
   "repository": {
     "type": "git",

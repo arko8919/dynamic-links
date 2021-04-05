@@ -2,13 +2,14 @@
 
 .instruction {
   display: flex;
-  flex-flow: column nowrap;
   align-items: center;
+  flex-flow: column nowrap;
 }
 
 .app-usage {
   @include respond-to('small') {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }

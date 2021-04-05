@@ -34,11 +34,7 @@ $breakpoints: (
 }
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
-
+  $u1: unit($min-vw);$u2: unit($max-vw);$u3: unit($min-font-size);$u4: unit($max-font-size);
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
       font-size: $min-font-size;
@@ -54,12 +50,11 @@ $breakpoints: (
 
 // add prefixes to property
 @mixin prefix($property, $value, $prefixes: ()) {
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $value;
   }
-
-  // Output standard non-prefixed declaration
-  #{$property}: $value;
 }
 
 // add social media icons into multiple list items
@@ -71,9 +66,8 @@ $breakpoints: (
 
 // ???
 @mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
-}
+  width: $width;height: $height;
+  }
 
 
 // argument-less mixins
