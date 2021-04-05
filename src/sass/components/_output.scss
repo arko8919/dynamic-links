@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.output-wrapper {
+  @extend %wrapper;
+  @include respond-to('medium') {
+    flex-flow: row wrap;
+  }
+
+  label[for="output"] {
+    @include respond-to('medium') {
+      width: 100%;
+
+      text-align: center;
+    }
+  }
+
+  button[type="button"] {
+    @include respond-to('medium') {
+      margin: 0;
+    }
+  }
+}
+
+
+#output {
+  display: inline-block;
+
+  width: 20rem;
+  padding: .7rem;
+
+  color: hsla(0, 0%, 0%, 0.7);
+  border: 4px solid $curious-blue;
+  background-color: $porcelain;
+
+  &:focus {
+    border: 4px solid $jet-stream;
+    outline: none;
+  }
+}
+

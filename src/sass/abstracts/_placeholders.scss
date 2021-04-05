@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+// input and output wrapper styles
+%wrapper {
+  margin-top: 3rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  background-color: $zuma-beach;
+  box-shadow: $jet-stream 0 4px 8px;
+}

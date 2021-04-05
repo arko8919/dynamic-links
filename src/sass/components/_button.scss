@@ -1,0 +1,41 @@
+@use './src/sass/abstracts/variables' as *;
+@use './src/sass/abstracts/mixins' as *;
+
+label {
+  margin-bottom: .5rem;
+  font-weight: bold;
+}
+
+button[type="button"] {
+  margin-top: .7rem;
+  padding: .7rem 2rem;
+  border: 4px solid $curious-blue;
+
+  background-color: $curious-blue;
+  color: $porcelain;
+
+  font-weight: bold;
+
+  outline: none;
+  cursor: pointer;
+
+  @include respond-to('medium') {
+    .output-wrapper button[type="button"] {
+      margin: 0;
+    }
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  /* behaviour for pointers */
+  @media (hover: hover) {
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+

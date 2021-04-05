@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-    <link href="assets/normalize.css" rel="stylesheet" type="text/css">
-    <link href="assets/style.css" rel="stylesheet" type="text/css">
-    <script src="assets/script.js" defer></script>
+    <link href="src/main.css" rel="stylesheet" type="text/css">
+    <script src="dist/main.js" defer></script>
 </head>
 <body>
 <header>
-    <h1>URL Shortener</h1>
+    <h1 class="heading">URL Shortener</h1>
 </header>
 <main>
     <div class="container">
         <p>URL shortening makes links substantially shorter and still direct to the required page.</p>
-        <section class="wrapper">
+        <section class="app-wrapper">
             <div class="input-wrapper">
                 <label for="input">Enter URL: </label>
                 <input id="input" placeholder="https://www.artursd.com">
@@ -38,7 +37,7 @@
                 <li>A link does not point to a malicious website.</li>
             </ul>
             <h2>What does it do?</h2>
-            <ul class="info">
+            <ul class="app-usage">
                 <li><h3>Promote sharing</h3>
                     Sending messages on a website or posting on social media sometimes has a character limit and
                     links can be very long. Effectively shortens the number of characters in URL.
@@ -56,7 +55,6 @@
                     It's actually quite opposite, short links mask can malicious URLs.
                 </li>
             </ul>
-
         </section>
     </div>
 </main>

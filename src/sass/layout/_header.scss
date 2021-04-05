@@ -1,0 +1,11 @@
+@use '/src/sass/abstracts/variables' as *;
+
+.heading {
+    color: $jet-stream;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-shadow: -1px 1px 0 $curious-blue,
+    1px 1px 0 $curious-blue,
+    1px -1px 0 $curious-blue,
+    -1px -1px 0 $curious-blue;
+}

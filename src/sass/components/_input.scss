@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/placeholders' as *;
+
+.input-wrapper {
+  @extend %wrapper;
+
+}
+
+#input {
+  padding: .7rem;
+  border: 4px solid $curious-blue;
+
+  border-radius: 2px;
+
+  &:focus {
+      outline: none;
+      border: 4px solid $jet-stream;
+  }
+}

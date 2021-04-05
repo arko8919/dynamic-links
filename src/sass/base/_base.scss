@@ -1,0 +1,97 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+html {
+  box-sizing: border-box;
+
+  font-size: 100%;
+
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  // move footer to the bottom of the page if there is not enough content
+  // change display to flex and direction to column and then set min-height to 100vh
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  color: black;
+  background-color: $porcelain;
+
+  font-family: 'Ubuntu', sans-serif;
+  // iOS Safari
+
+  -webkit-touch-callout: none;
+  @include prefix(user-select, none, webkit moz ms);
+}
+
+h1 {
+  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h2 {
+  margin-bottom: 2rem;
+
+  color: $jet-stream;
+  text-shadow: 3px 3px 5px black;
+
+  font-size: $mod_1*$mod_1*$mod_1 *1rem;
+
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
+}
+
+h3 {
+  margin-bottom: .2rem;
+
+  font-size: $mod_1*$mod_1 *1rem;
+
+  @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
+}
+
+h1, h2 {
+  margin-top: 3rem;
+}
+
+main {
+  flex: 1;
+}
+
+p, li {
+  margin: .7rem;
+}
+
+h1, h2, h3, footer, p, ul {
+  text-align: center;
+}
+
+// rest default styles of lists
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  justify-content: center;
+
+  margin: 1.7rem 0;
+
+  @include respond-to('very-small') {
+    margin: 0 18%;
+  }
+}

@@ -1,10 +1,12 @@
+@use './src/sass/abstracts/variables' as *;
+
 /* social media */
 footer {
     margin-top: 4rem;
 }
 
 footer p {
-    color: rgb(190, 216, 212);
+    color: $jet-stream;
 }
 
 .social-media {
@@ -36,25 +38,25 @@ footer p {
 }
 
 .social-media li:hover {
-    box-shadow: 0 .125rem 2px rgb(32, 129, 195),
-    0 -.125rem .125rem rgb(32, 129, 195),
-    .125rem 0 .125rem rgb(32, 129, 195),
-    -.125rem 0 .125rem rgb(32, 129, 195);
+    box-shadow: 0 .125rem 2px $curious-blue,
+    0 -.125rem .125rem $curious-blue,
+    .125rem 0 .125rem $curious-blue,
+    -.125rem 0 .125rem $curious-blue;
     border-radius: .3125rem;
 }
 
 .social-media li:nth-child(1) a {
-    background-image: url(images/linkedin.png);
+    background-image: url('assets/images/linkedin.png');
 }
 
 .social-media li:nth-child(2) a {
-    background-image: url(images/github.png);
+    background-image: url('assets/images/github.png');
 }
 
 .social-media li:nth-child(3) a {
-    background-image: url(images/facebook.png);
+    background-image: url('assets/images/facebook.png');
 }
 
 .social-media li:nth-child(4) a {
-    background-image: url(images/instagram.png);
+    background-image: url('assets/images/instagram.png');
 }

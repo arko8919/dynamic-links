@@ -16,5 +16,11 @@
     "url": "https://github.com/arko8919/dynamic-links/issues"
   },
   "homepage": "https://github.com/arko8919/dynamic-links#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "keywords": [],
+  "devDependencies": {
+    "csscomb": "^4.3.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.6.0"
+  }
 }
