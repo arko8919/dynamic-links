@@ -1,3 +1,4 @@
+import './style.scss';
 import {getLink} from './js/get-link';
 import {copyToClipboard} from './js/copy-to-clipboard';
 

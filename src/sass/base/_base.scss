@@ -6,21 +6,21 @@ html {
 
   font-size: 100%;
 
-  @include fluid-type($min_width, $max_width, $min_font, $max_font);
-
+  // content responsive font. variables declared in variables partial file
+  @include fluid-type(
+  $min-width,
+  $max-width,
+  $min-font,
+  $max-font);
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  // move footer to the bottom of the page if there is not enough content
-  // change display to flex and direction to column and then set min-height to 100vh
-  display: flex;
-  flex-direction: column;
-
-  min-height: 100vh;
   margin: 0;
   padding: 0;
 
@@ -28,62 +28,55 @@ body {
   background-color: $porcelain;
 
   font-family: 'Ubuntu', sans-serif;
-  // iOS Safari
 
-  -webkit-touch-callout: none;
   @include prefix(user-select, none, webkit moz ms);
+  // iOS Safari
+  -webkit-touch-callout: none;
 }
 
 h1 {
-  font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+  font-size: $mod-1*$mod-1*$mod-1*$mod-1 *1rem;
 
+  // heading responsive font
   @include fluid-type(
-                  $min_width,
-                  $max_width,
-                  $mod_1*$mod_1*$mod_1 *$min_font,
-                  $mod_2*$mod_2*$mod_2 *$min_font);
+  $min-width,
+  $max-width,
+  $mod-1*$mod-1*$mod-1 *$min-font,
+  $mod-2*$mod-2*$mod-2 *$min-font);
 }
 
 h2 {
-  margin-bottom: 2rem;
-
   color: $jet-stream;
   text-shadow: 3px 3px 5px black;
 
-  font-size: $mod_1*$mod_1*$mod_1 *1rem;
+  font-size: $mod-1*$mod-1*$mod-1 *1rem;
+  // heading responsive font
 
   @include fluid-type(
-                  $min_width,
-                  $max_width,
-                  $mod_1*$mod_1*$mod_1 *$min_font,
-                  $mod_2*$mod_2*$mod_2 *$min_font);
+  $min-width,
+  $max-width,
+  $mod-1*$mod-1*$mod-1 *$min-font,
+  $mod-2*$mod-2*$mod-2 *$min-font);
 }
 
 h3 {
-  margin-bottom: .2rem;
-
-  font-size: $mod_1*$mod_1 *1rem;
+  font-size: $mod-1*$mod-1 *1rem;
+  // heading responsive font
 
   @include fluid-type(
-                  $min_width,
-                  $max_width,
-                  $mod_1*$mod_1 *$min_font,
-                  $mod_2*$mod_2 *$min_font);
+  $min-width,
+  $max-width,
+  $mod-1*$mod-1 *$min-font,
+  $mod-2*$mod-2 *$min-font);
 }
 
-h1, h2 {
-  margin-top: 3rem;
-}
-
-main {
-  flex: 1;
-}
-
-p, li {
-  margin: .7rem;
-}
-
-h1, h2, h3, footer, p, ul {
+h1,
+h2,
+h3,
+footer,
+label,
+p,
+ul {
   text-align: center;
 }
 
@@ -100,10 +93,12 @@ ul {
   align-items: center;
   flex-flow: column wrap;
   justify-content: center;
+  // it moves away content from corners of the screen vertically and horizontally
 
-  margin: 1.7rem 0;
+  margin: 1.7rem 0.6rem;
 
-  @include respond-to('very-small') {
+  @include respond-to('small') {
+    // it moves away content from corners of the screen horizontally
     margin: 0 18%;
   }
 }

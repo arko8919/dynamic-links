@@ -1,13 +1,5 @@
-@use "sass:meta";
-
-// breakpoints map used with mixin respond-to($breakpoints)
-$breakpoints: (
-        'very-small': (min-width: 468px),
-        'small': (min-width: 768px),
-        'medium': (min-width: 1024px),
-        'large': (min-width: 1440px),
-        'huge': (min-width: 1700px),
-);
+@use 'sass:meta';
+@use '../abstracts/variables' as *;
 
 // media queries for min-width of used device
 @mixin respond-to($breakpoint) {
@@ -25,21 +17,30 @@ $breakpoints: (
     }
   } @else {
     @error 'No value found for `#{$breakpoint}`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
+    + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
 
+// function used inside fluid-type mixin which removes unit from number
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
-
+// responsive font size
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);$u2: unit($max-vw);$u3: unit($min-font-size);$u4: unit($max-font-size);
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+ // if all units are the same type( px == px  )
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
       font-size: $min-font-size;
       @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        font-size: calc(#{$min-font-size} +
+        #{strip-unit($max-font-size - $min-font-size)} *
+        ((100vw - #{$min-vw}) /
+        #{strip-unit($max-vw - $min-vw)}));
       }
       @media screen and (min-width: $max-vw) {
         font-size: $max-font-size;
@@ -50,7 +51,7 @@ $breakpoints: (
 
 // add prefixes to property
 @mixin prefix($property, $value, $prefixes: ()) {
-  // Output standard non-prefixed declaration
+  // output standard non-prefixed declaration
   #{$property}: $value;
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $value;
@@ -64,10 +65,8 @@ $breakpoints: (
   }
 }
 
-// ???
-@mixin size($width, $height: $width) {
-  width: $width;height: $height;
-  }
-
-
-// argument-less mixins
+//  mixin to give dimensions to a box
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

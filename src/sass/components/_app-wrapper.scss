@@ -4,13 +4,8 @@
 
 /* input & output */
 .app-wrapper {
-  width: 100%;/* makes input and output area distinguish and more visible */
-
-  @include respond-to('small') {
-    max-width: 40rem;
-  }@include respond-to('medium') {
+  width: 100%;@include respond-to('small') {
     max-width: 40rem;
   }
-
-  }
+}
 

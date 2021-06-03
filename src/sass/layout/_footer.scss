@@ -1,44 +1,63 @@
-@use './src/sass/abstracts/variables' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 /* social media */
 footer {
-    margin-top: 4rem;
+  margin-top: 3rem;
+
+  background-color: $jet-stream;
+
+  font-size: 0.7em;
 }
 
 footer p {
-    color: $jet-stream;
+  margin: 0;
+  padding: 1rem;
+
+  color: $curious-blue;
 }
 
 .social-media {
-    display: flex;flex-flow: row nowrap;justify-content: center;margin: 0;padding: 0; /* remove padding-inline-start */list-style: none;
-    }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 
-.social-media li {margin: 1rem;padding: .4rem;transition: .2s all ease-out;white-space: nowrap; /* because only the first line is indented */text-indent: -9999px; /* sends the text off-screen. keep text for accessibility purpose */border: none;
-    }
+  margin: 0;
+  padding: 0; /* remove padding-inline-start */
 
-.social-media a {
+  list-style: none;
+
+  li {
+    margin: 1rem;
+    padding: 0.4rem;
+
+    transition: 0.2s all ease-out;
+    white-space: nowrap; /* because only the first line is indented */
+    text-indent: -9999px; /* sends the text off-screen. keep text for accessibility purpose */
+
+    border: none;
+
+    @include addSocialIcons(1, 'assets/linkedin.png');
+    @include addSocialIcons(2, 'assets/github.png');
+    @include addSocialIcons(3, 'assets/facebook.png');
+    @include addSocialIcons(4, 'assets/instagram.png');
+
+    &:hover {
+      border-radius: 0.3125rem;
+      box-shadow: 0 0.125rem 2px $curious-blue,
+      0 -0.125rem 0.125rem $curious-blue,
+      0.125rem 0 0.125rem $curious-blue,
+      -0.125rem 0 0.125rem $curious-blue;
+    }
+  }
+
+  a {
     /* display block and height 100% makes anchor clickable  */
-    display: block;width: 2rem;height: 2rem;outline: none; /* removes outlines which show when i click on link */background: center / contain no-repeat;
-    }
+    display: block;
 
-.social-media li:hover {border-radius: .3125rem;box-shadow: 0 .125rem 2px $curious-blue,
-    0 -.125rem .125rem $curious-blue,
-    .125rem 0 .125rem $curious-blue,
-    -.125rem 0 .125rem $curious-blue;
-    }
+    @include box(2rem, 2rem);
 
-.social-media li:nth-child(1) a {
-    background-image: url('assets/images/linkedin.png');
-}
-
-.social-media li:nth-child(2) a {
-    background-image: url('assets/images/github.png');
-}
-
-.social-media li:nth-child(3) a {
-    background-image: url('assets/images/facebook.png');
-}
-
-.social-media li:nth-child(4) a {
-    background-image: url('assets/images/instagram.png');
+    outline: none; /* removes outlines which show when i click on link */
+    background: center / contain no-repeat;
+  }
 }

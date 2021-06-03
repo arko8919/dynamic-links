@@ -1,4 +1,4 @@
-@charset "utf-8"; // should use single quotes because Sass convert them to double quotes but my IDE show error
+@charset "utf-8"; // in css single quotes are not allowed but in Sass they acceptable
 // base
 @use 'sass/base/normalize';
 @use 'sass/base/base';

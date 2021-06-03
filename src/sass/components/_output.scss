@@ -1,41 +1,37 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
 
 .output-wrapper {
   @extend %wrapper;
   @include respond-to('medium') {
     flex-flow: row wrap;
-  }
 
-  label[for="output"] {
-    @include respond-to('medium') {
+    label[for='output'] {
       width: 100%;
-
-      text-align: center;
     }
-  }
 
-  button[type="button"] {
-    @include respond-to('medium') {
+    button[type='button'] {
       margin: 0;
     }
   }
 }
 
+.output-wrapper {
+  input {
+    display: inline-block;
 
-#output {
-  display: inline-block;
+    width: 20rem;
+    margin-right: 0.2rem;
+    padding: 0.7rem;
 
-  width: 20rem;
-  padding: .7rem;
+    color: hsla(0, 0%, 0%, 0.7);
+    border: 4px solid $curious-blue;
+    background-color: $porcelain;
 
-  color: hsla(0, 0%, 0%, 0.7);
-  border: 4px solid $curious-blue;
-  background-color: $porcelain;
-
-  &:focus {
-    border: 4px solid $jet-stream;
-    outline: none;
+    &:focus {
+      border: 4px solid $jet-stream;
+      outline: none;
+    }
   }
 }
-
