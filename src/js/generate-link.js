@@ -1,6 +1,6 @@
 import {fetchResponse} from './fetch-response';
 
-const apiKey = 'AIzaSyAjtIXOxRiIoT7O2lnBwuGFvyStdRSBGUg';
+const apiKey = 'AIzaSyCezBfMpaJL-cj_IG0kyF8wK1LcbiCprcI';
 const url = `https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${apiKey}`;
 
 export function generateLink(data) {
