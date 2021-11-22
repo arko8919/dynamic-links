@@ -8,7 +8,7 @@ export function generateLink(data) {
     xhr.open("POST", url, true)
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {
-        fetchResponse(xhr);
+        fetchResponse(xhr);         
     };
     xhr.send(data);
 }

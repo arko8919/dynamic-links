@@ -1,37 +1,40 @@
-import {validURL} from './valid-url';
-import {generateLink} from './generate-link';
+import { validURL } from './valid-url';
+import { generateLink } from './generate-link';
 
 const inputRef = document.querySelector('#input');
+const warningRef = document.querySelector('.warning');
+
 
 const param =
-    {
-        dynamicLinkInfo: {
-            domainUriPrefix: 'https://arko.page.link',
-            link: '',
-        },
-        suffix: {
-            option: 'SHORT'
-        }
-    };
+{
+    dynamicLinkInfo: {
+        domainUriPrefix: 'https://arko.page.link',
+        link: '',
+    },
+    suffix: {
+        option: 'SHORT'
+    }
+};
 
-export function getLink(event) {
-    console.log(event);
-    // check if there is value inside input area
-    if (inputRef.value !== '') {
-        // validate if this is correct URl
-        validURL(inputRef.value);
-        console.log(validURL(inputRef.value));
-
-        // update parameters object with new link
-        param['dynamicLinkInfo']['link'] = inputRef.value;
-
-        // serialization - change object into string
-        const data = JSON.stringify(param);
-
-        // generate short URL
-        generateLink(data);
+export function urlValidation(event) {
+    // check if there is value inside input area and validate if this is correct URl
+    if (inputRef.value !== '' && validURL(inputRef.value)) {
+        updateParam();
+        warningRef.textContent = '';
     } else {
         event.preventDefault()
-        console.log('Enter Value');
+        warningRef.textContent = 'Enter correct URL';       
     }
+}
+
+// update param object with validated URL
+function updateParam() {
+    // update parameters object with new link
+    param['dynamicLinkInfo']['link'] = inputRef.value;
+
+    // serialization - change object into string
+    const data = JSON.stringify(param);
+
+    // generate short URL
+    generateLink(data);
 }
