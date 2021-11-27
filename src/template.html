@@ -15,14 +15,15 @@
     <div class="container">
         <p>URL shortening makes links substantially shorter and still direct to the required page.</p>
         <section class="app-wrapper">
-            <div class="input-wrapper">
+            <form class="input-wrapper" novalidate>
                 <label for="input">Enter URL: </label>
-                <input id="input" placeholder="http://www.artursd.com">
+                <input type="url" id="input" placeholder="http://www.artursd.com" required>
+                <span class="error" aria-live="polite"></span>
                 <button type="button">Shorten URL</button>
-                <p class="warning"></p>
-            </div>
+                <!-- <p class="warning"></p> -->
+            </form>
             <div class="output-wrapper">
-                <label for="output">Your new shorter URL!</label>
+                <label for="output">Your last generated URL:</label>
                 <input id="output">
                 <button type="button">Copy</button>
             </div>

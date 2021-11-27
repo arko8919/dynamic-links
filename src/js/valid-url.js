@@ -1,5 +1,5 @@
-// validate URL ( I need to adjust regular expresion to match exactly link )
-export function validURL(string) {
+// Validate URL ( I need to adjust regular expresion to match exactly link )
+function validURL(string) {
     let pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
         '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
