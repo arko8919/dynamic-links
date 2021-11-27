@@ -1,4 +1,4 @@
-@use '../abstracts/mixins' as *;
+@use "../abstracts/mixins" as *;
 
 .instruction {
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 .app-usage {
-  @include respond-to('small') {
+  @include respond-to("small") {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);

@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 label {
   margin-bottom: 0.5rem;
@@ -7,7 +7,7 @@ label {
   font-weight: bold;
 }
 
-button[type='button'] {
+button[type="button"] {
   margin-top: 0.7rem;
   padding: 0.7rem 2rem;
 
@@ -20,8 +20,8 @@ button[type='button'] {
 
   font-weight: bold;
 
-  @include respond-to('medium') {
-    .output-wrapper button[type='button'] {
+  @include respond-to("medium") {
+    .output-wrapper button[type="button"] {
       margin: 0;
     }
   }
