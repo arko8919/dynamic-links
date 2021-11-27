@@ -1,16 +1,12 @@
-@use 'sass:meta';
-@use '../abstracts/variables' as *;
+@use "sass:meta";
+@use "../abstracts/variables" as *;
 
 // media queries for min-width of used device
 @mixin respond-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);
 
   @if $raw-query {
-    $query: if(
-                    type-of($raw-query) == 'string',
-                    unquote($raw-query),
-                    inspect($raw-query)
-    );
+    $query: if(type-of($raw-query) == "string", unquote($raw-query), inspect($raw-query));
 
     @media #{$query} {
       @content;
@@ -32,15 +28,15 @@
   $u3: unit($min-font-size);
   $u4: unit($max-font-size);
 
- // if all units are the same type( px == px  )
+  // if all units are the same type( px == px  )
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
       font-size: $min-font-size;
       @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} +
-        #{strip-unit($max-font-size - $min-font-size)} *
-        ((100vw - #{$min-vw}) /
-        #{strip-unit($max-vw - $min-vw)}));
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
       }
       @media screen and (min-width: $max-vw) {
         font-size: $max-font-size;

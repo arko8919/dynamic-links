@@ -1,8 +1,9 @@
 export const htmlRequestData = {
-    apiKey: 'AIzaSyCezBfMpaJL-cj_IG0kyF8wK1LcbiCprcI',
     // Concatenation and Template literals didn't work. Why?
-    //  url: 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key='.concat(apiKey),
-    url: 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyCezBfMpaJL-cj_IG0kyF8wK1LcbiCprcI',
+    // apiKey: 'AIzaSyCezBfMpaJL-cj_IG0kyF8wK1LcbiCprcI',
+    // url: `https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${apiKey}`,
+
+    url: 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=',
 
     param:
     {
@@ -24,10 +25,12 @@ export const htmlRequestData = {
         body: {}
     },
 
-    updateData: function (input) {
+    updateData: function (input, apiKey) {
         // Use URL from input to update param object
         this.param['dynamicLinkInfo']['link'] = input;
         // Update body which will be send with other fetch options
         this.myInit.body = JSON.stringify(this.param);
+        // Update URL with API key
+        this.url += apiKey;
     },
 }

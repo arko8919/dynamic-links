@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 /* social media */
 footer {
@@ -37,17 +37,15 @@ footer p {
 
     border: none;
 
-    @include addSocialIcons(1, 'assets/linkedin.png');
-    @include addSocialIcons(2, 'assets/github.png');
-    @include addSocialIcons(3, 'assets/facebook.png');
-    @include addSocialIcons(4, 'assets/instagram.png');
+    @include addSocialIcons(1, "assets/linkedin.png");
+    @include addSocialIcons(2, "assets/github.png");
+    @include addSocialIcons(3, "assets/facebook.png");
+    @include addSocialIcons(4, "assets/instagram.png");
 
     &:hover {
       border-radius: 0.3125rem;
-      box-shadow: 0 0.125rem 2px $curious-blue,
-      0 -0.125rem 0.125rem $curious-blue,
-      0.125rem 0 0.125rem $curious-blue,
-      -0.125rem 0 0.125rem $curious-blue;
+      box-shadow: 0 0.125rem 2px $curious-blue, 0 -0.125rem 0.125rem $curious-blue, 0.125rem 0 0.125rem $curious-blue,
+        -0.125rem 0 0.125rem $curious-blue;
     }
   }
 
