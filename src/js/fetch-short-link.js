@@ -2,7 +2,6 @@ import { htmlRequestData } from './html-request-data';
 import { showApiError } from './show-api-error';
 
 const outputRef = document.querySelector('#output');
-const apiKey = 'AIzaSyCezBfMpaJL-cj_IG0kyF8wK1LcbiCprcI';
 
 // Update link data and send request to server
 export function fetchShortLink(inputRef, spanErrorRef) {
