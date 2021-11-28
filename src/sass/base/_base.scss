@@ -1,17 +1,13 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 html {
   box-sizing: border-box;
 
   font-size: 100%;
 
-  // content responsive font. variables declared in variables partial file
-  @include fluid-type(
-  $min-width,
-  $max-width,
-  $min-font,
-  $max-font);
+  // Responsive font for content
+  @include fluid-type($min-width, $max-width, $min-font, $max-font);
 }
 
 *,
@@ -27,47 +23,45 @@ body {
   color: black;
   background-color: $porcelain;
 
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 
+  //  Disables user text selection
   @include prefix(user-select, none, webkit moz ms);
-  // iOS Safari
-  -webkit-touch-callout: none;
+  -webkit-touch-callout: none; // iOS Safari
 }
 
 h1 {
-  font-size: $mod-1*$mod-1*$mod-1*$mod-1 *1rem;
+  font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem;
 
-  // heading responsive font
+  // Responsive font for headers
   @include fluid-type(
-  $min-width,
-  $max-width,
-  $mod-1*$mod-1*$mod-1 *$min-font,
-  $mod-2*$mod-2*$mod-2 *$min-font);
+    $min-width,
+    $max-width,
+    $mod-1 * $mod-1 * $mod-1 * $min-font,
+    $mod-2 * $mod-2 * $mod-2 * $min-font
+  );
 }
 
 h2 {
   color: $jet-stream;
   text-shadow: 3px 3px 5px black;
 
-  font-size: $mod-1*$mod-1*$mod-1 *1rem;
-  // heading responsive font
+  font-size: $mod-1 * $mod-1 * $mod-1 * 1rem;
 
+  // Responsive font for headers
   @include fluid-type(
-  $min-width,
-  $max-width,
-  $mod-1*$mod-1*$mod-1 *$min-font,
-  $mod-2*$mod-2*$mod-2 *$min-font);
+    $min-width,
+    $max-width,
+    $mod-1 * $mod-1 * $mod-1 * $min-font,
+    $mod-2 * $mod-2 * $mod-2 * $min-font
+  );
 }
 
 h3 {
-  font-size: $mod-1*$mod-1 *1rem;
-  // heading responsive font
+  font-size: $mod-1 * $mod-1 * 1rem;
 
-  @include fluid-type(
-  $min-width,
-  $max-width,
-  $mod-1*$mod-1 *$min-font,
-  $mod-2*$mod-2 *$min-font);
+  // Responsive font for headers
+  @include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
 }
 
 h1,
@@ -80,25 +74,10 @@ ul {
   text-align: center;
 }
 
-// rest default styles of lists
+// Reset list
 ul {
   margin: 0;
   padding: 0;
 
   list-style: none;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  flex-flow: column wrap;
-  justify-content: center;
-  // it moves away content from corners of the screen vertically and horizontally
-
-  margin: 1.7rem 0.6rem;
-
-  @include respond-to('small') {
-    // it moves away content from corners of the screen horizontally
-    margin: 0 18%;
-  }
 }

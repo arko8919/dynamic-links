@@ -10,6 +10,7 @@ label {
 button[type="button"] {
   margin-top: 0.7rem;
   padding: 0.7rem 2rem;
+  min-height: 3.2rem;
 
   cursor: pointer;
 
@@ -30,7 +31,7 @@ button[type="button"] {
     outline: none;
   }
 
-  /* behaviour for pointers */
+  // Behaviour for pointers
   @media (hover: hover) {
     opacity: 0.8;
 

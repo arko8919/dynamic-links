@@ -7,7 +7,7 @@ import { copyToClipboard } from './js/copy-to-clipboard';
 // References to DOM elements
 const buttonRef = document.querySelectorAll('button[type="button"]');
 const inputRef = document.querySelector('#input');
-const spanErrorRef = document.querySelector('#input + span.error');
+const spanErrorRef = document.querySelector('#input + div.error');
 
 
 
