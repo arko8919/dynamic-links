@@ -34,20 +34,48 @@
   }
 }
 
-// This is the style of our error messages
+// Error Tool Tip Styles 
 .error {
-  // change this styling
-  width: 100%;
-  padding: 0;
+  // Font 
+  font-family: Helvetica;
+  font-size: 13px;
+  font-weight: bold;
+  color: #cc0033;
+  line-height: 20px;
+  // Background 
+  background-color: #fce4e4;
+  border: 1px solid #fcc2c3;
+  border-radius: 7px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  // Positioning 
+  float: left;
+  position: relative;
+  padding: 7px 11px 4px;
+  visibility: hidden;
+  margin-top: 10px; // Distance between error tip and element it points to 
+  min-height: 1.5rem;
 
-  font-size: 80%;
-  color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
+  // Left Arrow Styles 
+  &:after,
+  &:before {
+    content: "";
+    border: 7px solid transparent;
+    position: absolute;
+    top: -13px;
+  }
 
-  box-sizing: border-box;
+  &:after {
+    border-bottom: 7px solid #fce4e4;
+    left: 50%;
+  }
+
+  &:before {
+    border-bottom: 7px solid #fcc2c3;
+    left: 50%;
+  }
 }
-
+// Show error message
 .error.active {
-  padding: 0.3em;
+  visibility: visible;
 }

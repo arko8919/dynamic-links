@@ -7,7 +7,7 @@ const outputRef = document.querySelector('#output');
 export function fetchShortLink(inputRef, spanErrorRef) {
     // Update data with new URL input from user
     // Update fetch options
-    htmlRequestData.updateData(inputRef.value, apiKey);
+    htmlRequestData.updateData(inputRef.value);
 
     fetch(htmlRequestData.url, htmlRequestData.myInit)
         .then(response => {

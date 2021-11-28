@@ -1,13 +1,13 @@
-@use 'variables' as *;
+@use "variables" as *;
 
-// input and output wrapper styles
+// Input and output wrapper styles
 %wrapper {
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
   justify-content: center;
-  // negative margin to push input and output box corners into device corners on smaller screen sizes
 
+  // Negative margin to push input and output box corners into device corners on smaller screen sizes
   margin: 3rem -0.6rem;
   padding: 2rem 1rem;
 

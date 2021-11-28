@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/placeholders" as *;
 
-/* input & output */
+// Input & output 
 .app-wrapper {
   width: 100%;
   @include respond-to("small") {

@@ -6,5 +6,7 @@ export function showError(inputRef, spanErrorRef) {
         // If the field doesn't contain an email address, display the following error message
         spanErrorRef.textContent = 'Entered value needs to be an e-mail address.';
     }
+
+    spanErrorRef.className = 'error active';
 }
 
