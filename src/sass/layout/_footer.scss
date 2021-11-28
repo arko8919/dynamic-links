@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-/* social media */
+// Social media
 footer {
   margin-top: 3rem;
 
@@ -23,7 +23,7 @@ footer p {
   justify-content: center;
 
   margin: 0;
-  padding: 0; /* remove padding-inline-start */
+  padding: 0; // Remove padding-inline-start
 
   list-style: none;
 
@@ -32,11 +32,12 @@ footer p {
     padding: 0.4rem;
 
     transition: 0.2s all ease-out;
-    white-space: nowrap; /* because only the first line is indented */
-    text-indent: -9999px; /* sends the text off-screen. keep text for accessibility purpose */
+    white-space: nowrap; // Because only the first line is indented
+    text-indent: -9999px; // Sends the text off-screen. It is keeping text for accessibility purpose
 
     border: none;
 
+    // Add social media icons and links
     @include addSocialIcons(1, "assets/linkedin.png");
     @include addSocialIcons(2, "assets/github.png");
     @include addSocialIcons(3, "assets/facebook.png");
@@ -50,12 +51,12 @@ footer p {
   }
 
   a {
-    /* display block and height 100% makes anchor clickable  */
+    // Display block and height 100% makes <a> clickable
     display: block;
 
     @include box(2rem, 2rem);
 
-    outline: none; /* removes outlines which show when i click on link */
+    outline: none; // Remove outlines which show when link is clicked
     background: center / contain no-repeat;
   }
 }
