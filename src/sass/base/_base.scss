@@ -1,67 +1,45 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../helpers' as *;
 
-html {
-  box-sizing: border-box;
-
-  font-size: 100%;
-
-  // Responsive font for content
-  @include fluid-type($min-width, $max-width, $min-font, $max-font);
+html
+{
+    font-size: 100%;  box-sizing: border-box; // Responsive font for content@include fluid-type($min-width, $max-width, $min-font, $max-font);
 }
 
 *,
 *:before,
-*:after {
-  box-sizing: inherit;
+*:after
+{
+    box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-
-  color: black;
-  background-color: $porcelain;
-
-  font-family: "Ubuntu", sans-serif;
-
-  //  Disables user text selection
-  @include prefix(user-select, none, webkit moz ms);
-  -webkit-touch-callout: none; // iOS Safari
+body
+{
+    font-family: 'Ubuntu', sans-serif;  margin: 0;  padding: 0;  color: black;  background-color: $porcelain; //  Disables user text selection@include prefix(user-select, none, webkit moz ms);  -webkit-touch-callout: none; // iOS Safari
 }
 
-h1 {
-  font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem;
-
-  // Responsive font for headers
-  @include fluid-type(
+h1
+{
+    font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem; // Responsive font for headers@include fluid-type(
     $min-width,
     $max-width,
     $mod-1 * $mod-1 * $mod-1 * $min-font,
     $mod-2 * $mod-2 * $mod-2 * $min-font
-  );
+    );
 }
 
-h2 {
-  color: $jet-stream;
-  text-shadow: 3px 3px 5px black;
-
-  font-size: $mod-1 * $mod-1 * $mod-1 * 1rem;
-
-  // Responsive font for headers
-  @include fluid-type(
+h2
+{
+    font-size: $mod-1 * $mod-1 * $mod-1 * 1rem;  color: $jet-stream;  text-shadow: 3px 3px 5px black; // Responsive font for headers@include fluid-type(
     $min-width,
     $max-width,
     $mod-1 * $mod-1 * $mod-1 * $min-font,
     $mod-2 * $mod-2 * $mod-2 * $min-font
-  );
+    );
 }
 
-h3 {
-  font-size: $mod-1 * $mod-1 * 1rem;
-
-  // Responsive font for headers
-  @include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
+h3
+{
+    font-size: $mod-1 * $mod-1 * 1rem; // Responsive font for headers@include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
 }
 
 h1,
@@ -70,14 +48,13 @@ h3,
 footer,
 label,
 p,
-ul {
-  text-align: center;
+ul
+{
+    text-align: center;
 }
 
 // Reset list
-ul {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
+ul
+{
+    margin: 0;  padding: 0;  list-style: none;
 }

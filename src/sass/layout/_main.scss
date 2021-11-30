@@ -1,17 +1,17 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../helpers' as *;
 
-.container {
+.container
+{
     display: flex;
     align-items: center;
     flex-flow: column wrap;
-    justify-content: center;
-  
-    // It moves away content from corners of the screen vertically and horizontally
-    margin: 1.7rem 0.6rem;
-  
-    @include respond-to("small") {
-      // It moves away content from corners of the screen horizontally
-      margin: 0 18%;
+    justify-content: center; // It moves away content from corners of the screen vertically and horizontally
+
+    margin: 1.7rem .6rem;
+
+    @include respond-to('small')
+    {
+        // It moves away content from corners of the screen horizontally
+        margin: 0 18%;
     }
-  }
+}

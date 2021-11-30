@@ -1,8 +1,4 @@
-const outputRef = document.querySelector('#output');
-
-export function copyToClipboard() {
+export function copyToClipboard(outputRef) {
     const cb = navigator.clipboard;
-
     cb.writeText(outputRef.innerText);
-     
 }

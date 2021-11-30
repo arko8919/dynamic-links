@@ -1,10 +1,8 @@
 import { htmlRequestData } from './html-request-data';
 import { showApiError } from './show-api-error';
 
-const outputRef = document.querySelector('#output');
-
 // Update link data and send request to server
-export function fetchShortLink(inputRef, spanErrorRef) {
+export function fetchShortLink(inputRef, divErrorRef, outputRef) {
     // Update data with new URL input from user
     // Update fetch options
     htmlRequestData.updateData(inputRef.value);
@@ -24,6 +22,6 @@ export function fetchShortLink(inputRef, spanErrorRef) {
         })
         .catch(error => {
             outputRef.value = '';
-            showApiError(spanErrorRef, error);         
+            showApiError(divErrorRef, error);         
         });
 }

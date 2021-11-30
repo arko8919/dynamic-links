@@ -1,62 +1,65 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use '../helpers' as *;
 
 // Social media
-footer {
-  margin-top: 3rem;
+footer
+{
+    font-size: .7em;
 
-  background-color: $jet-stream;
+    margin-top: 3rem;
 
-  font-size: 0.7em;
+    background-color: $jet-stream;
 }
 
-footer p {
-  margin: 0;
-  padding: 1rem;
+footer p
+{
+    margin: 0;
+    padding: 1rem;
 
-  color: $curious-blue;
+    color: $curious-blue;
 }
 
-.social-media {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+.social-media
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
 
-  margin: 0;
-  padding: 0; // Remove padding-inline-start
+    margin: 0;
+    padding: 0; // Remove padding-inline-start
 
-  list-style: none;
+    list-style: none;
+    li
+    {
+        margin: 1rem;
+        padding: .4rem;
 
-  li {
-    margin: 1rem;
-    padding: 0.4rem;
+        transition: .2s all ease-out;
+        white-space: nowrap; // Because only the first line is indented
+        text-indent: -9999px; // Sends the text off-screen. It is keeping text for accessibility purpose
 
-    transition: 0.2s all ease-out;
-    white-space: nowrap; // Because only the first line is indented
-    text-indent: -9999px; // Sends the text off-screen. It is keeping text for accessibility purpose
+        border: none; // Add social media icons and links
 
-    border: none;
+        @include addSocialIcons(1, 'assets/linkedin.png');
+        @include addSocialIcons(2, 'assets/github.png');
+        @include addSocialIcons(3, 'assets/facebook.png');
+        @include addSocialIcons(4, 'assets/instagram.png');
 
-    // Add social media icons and links
-    @include addSocialIcons(1, "assets/linkedin.png");
-    @include addSocialIcons(2, "assets/github.png");
-    @include addSocialIcons(3, "assets/facebook.png");
-    @include addSocialIcons(4, "assets/instagram.png");
-
-    &:hover {
-      border-radius: 0.3125rem;
-      box-shadow: 0 0.125rem 2px $curious-blue, 0 -0.125rem 0.125rem $curious-blue, 0.125rem 0 0.125rem $curious-blue,
-        -0.125rem 0 0.125rem $curious-blue;
+        &:hover
+        {
+            border-radius: .3125rem;
+            box-shadow: 0 .125rem 2px $curious-blue, 0 -.125rem .125rem $curious-blue,
+            .125rem 0 .125rem $curious-blue, -.125rem 0 .125rem $curious-blue;
+        }
     }
-  }
 
-  a {
-    // Display block and height 100% makes <a> clickable
-    display: block;
+    a
+    {
+        // Display block and height 100% makes <a> clickable
+        display: block;
 
-    @include box(2rem, 2rem);
+        outline: none; // Remove outlines which show when link is clicked
+        background: center / contain no-repeat;
 
-    outline: none; // Remove outlines which show when link is clicked
-    background: center / contain no-repeat;
-  }
+        @include box(2rem, 2rem);
+    }
 }

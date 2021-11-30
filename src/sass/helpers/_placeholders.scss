@@ -1,0 +1,7 @@
+@use '../helpers' as *;
+
+// Input and output wrapper styles
+%wrapper
+{
+    display: flex;  align-items: center;  flex-flow: column nowrap;  justify-content: center; // Negative margin to push input and output box corners into device corners on smaller screen sizes  margin: 3rem -.6rem;  padding: 2rem 1rem;  background-color: $zuma-beach;  box-shadow: $jet-stream 0 4px 8px;
+}

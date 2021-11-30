@@ -1,42 +1,45 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
-@use "../abstracts/placeholders" as *;
+@use '../helpers' as *;
+@use '../helpers/placeholders' as *;
 
-.output-wrapper {
-  @extend %wrapper;
-  @include respond-to("medium") {
-    flex-flow: row wrap;
+.output-wrapper
+{
+    @extend %wrapper;
+    @include respond-to('medium')
+    {
+        flex-flow: row wrap;
 
-    label[for="output"] {
-      width: 100%;
+        label[for='output']
+        {
+            width: 100%;
+        }
+
+        button[type='button']
+        {
+            margin: 0;
+        }
     }
-
-    button[type="button"] {
-      margin: 0;
-    }
-  }
 }
 
-.output-wrapper {
-  output {
-    display: inline-block;
+.output-wrapper
+{
+    output
+    {
+        display: inline-block;
 
-    width: 20rem;
-    margin-right: 0.2rem;
-    padding: 0.7rem;
-    min-height: 3.2rem;
+        width: 20rem;
+        min-height: 3.2rem;
+        margin-right: .2rem;
+        padding: .7rem;
 
-    color: hsla(0, 0%, 0%, 0.7);
-    border: 4px solid $curious-blue;
-    background-color: $porcelain;
+        color: hsla(0, 0%, 0%, .7);
+        border: 4px solid $curious-blue;
+        background-color: $porcelain;
 
-    @include prefix(user-select, text, webkit moz ms);
-    // iOS Safari
-    -webkit-touch-callout: text;
-
-    &:focus {
-      border: 4px solid $jet-stream;
-      outline: none;
+        @include prefix(user-select, text, webkit moz ms); // iOS Safari  -webkit-touch-callout: text;
+        &:focus
+        {
+            border: 4px solid $jet-stream;
+            outline: none;
+        }
     }
-  }
 }
