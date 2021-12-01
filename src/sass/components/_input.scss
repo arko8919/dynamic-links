@@ -1,59 +1,72 @@
-@use '../helpers' as *;
-@use '../helpers/placeholders' as *;
+@use "../helpers" as *;
+@use "../helpers/placeholders" as *;
 
-.input-wrapper
-{
+.input-wrapper {
     @extend %wrapper;
 }
 
-.input-wrapper
-{
-    input
-    {
-        padding: .7rem;  border: 4px solid $curious-blue;  border-radius: 2px; // Turn off system deafult styling  -webkit-appearance: none;                    appearance: none;
+.input-wrapper {
+    input {
+        -webkit-appearance: none;
+        appearance: none;
+        border: 4px solid $curious-blue;
+        border-radius: 2px; // Turn off system deafult styling
+        padding: 0.7rem;
         // This is our style for the invalid fields
-        &:invalid
-        {
+        &:invalid {
+            background-color: $warning-background;
             // change this styling
-            border-color: $error;  background-color: $warning-background;
+            border-color: $error;
         }
 
-        &:focus
-        {
-            border: 4px solid $jet-stream;  outline: none;
+        &:focus {
+            border: 4px solid $jet-stream;
+            outline: none;
         }
 
-        &:focus:invalid
-        {
+        &:focus:invalid {
             outline: none;
         }
     }
 }
 
 // Error Tool Tip Styles
-.error
-{
-    // Font
-    font-family: Helvetica;  font-size: 13px;  font-weight: bold;  line-height: 20px;  position: relative;  visibility: hidden; // Positioning   float: left;  margin-top: 10px; // Distance between error tip and element it points to   padding: 7px 11px 4px;  color: #c03;  border: 1px solid $warning-border;  -webkit-border-radius: 7px;        -moz-border-radius: 7px;                  border-radius: 7px;// Background   background-color: $warning-background;
+.error {
+    background-color: $warning-background;
+    border: 1px solid $warning-border;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color: #c03;
+    float: left;
+    font-family: Helvetica;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-top: 10px; // Distance between error tip and element it points to
+    padding: 7px 11px 4px;
+    position: relative;
+    visibility: hidden;
     // Left Arrow Styles
     &:after,
-    &:before
-    {
-        position: absolute;  top: -13px;  content: '';  border: 7px solid transparent;
+    &:before {
+        border: 7px solid transparent;
+        content: "";
+        position: absolute;
+        top: -13px;
     }
 
-    &:after
-    {
-        left: 50%;  border-bottom: 7px solid $warning-background;
+    &:after {
+        border-bottom: 7px solid $warning-background;
+        left: 50%;
     }
 
-    &:before
-    {
-        left: 50%;  border-bottom: 7px solid $warning-border;
+    &:before {
+        border-bottom: 7px solid $warning-border;
+        left: 50%;
     }
 }
 // Show error message
-.error.active
-{
+.error.active {
     visibility: visible;
 }

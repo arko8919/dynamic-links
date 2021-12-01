@@ -1,64 +1,52 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
 // Social media
-footer
-{
-    font-size: .7em;
-
-    margin-top: 3rem;
-
+footer {
     background-color: $jet-stream;
+    font-size: 0.7em;
+    margin-top: 3rem;
 }
 
-footer p
-{
+footer p {
+    color: $curious-blue;
     margin: 0;
     padding: 1rem;
-
-    color: $curious-blue;
 }
 
-.social-media
-{
+.social-media {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-
+    list-style: none;
     margin: 0;
     padding: 0; // Remove padding-inline-start
 
-    list-style: none;
-    li
-    {
+    li {
+        border: none; // Add social media icons and links
         margin: 1rem;
-        padding: .4rem;
-
-        transition: .2s all ease-out;
-        white-space: nowrap; // Because only the first line is indented
+        padding: 0.4rem;
         text-indent: -9999px; // Sends the text off-screen. It is keeping text for accessibility purpose
 
-        border: none; // Add social media icons and links
+        transition: 0.2s all ease-out;
+        white-space: nowrap; // Because only the first line is indented
 
-        @include addSocialIcons(1, 'assets/linkedin.png');
-        @include addSocialIcons(2, 'assets/github.png');
-        @include addSocialIcons(3, 'assets/facebook.png');
-        @include addSocialIcons(4, 'assets/instagram.png');
+        @include addSocialIcons(1, "assets/linkedin.png");
+        @include addSocialIcons(2, "assets/github.png");
+        @include addSocialIcons(3, "assets/facebook.png");
+        @include addSocialIcons(4, "assets/instagram.png");
 
-        &:hover
-        {
-            border-radius: .3125rem;
-            box-shadow: 0 .125rem 2px $curious-blue, 0 -.125rem .125rem $curious-blue,
-            .125rem 0 .125rem $curious-blue, -.125rem 0 .125rem $curious-blue;
+        &:hover {
+            border-radius: 0.3125rem;
+            box-shadow: 0 0.125rem 2px $curious-blue, 0 -0.125rem 0.125rem $curious-blue,
+                0.125rem 0 0.125rem $curious-blue, -0.125rem 0 0.125rem $curious-blue;
         }
     }
 
-    a
-    {
+    a {
+        background: center / contain no-repeat;
         // Display block and height 100% makes <a> clickable
         display: block;
-
         outline: none; // Remove outlines which show when link is clicked
-        background: center / contain no-repeat;
 
         @include box(2rem, 2rem);
     }

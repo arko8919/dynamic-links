@@ -1,16 +1,13 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
-.container
-{
-    display: flex;
+.container {
     align-items: center;
+    display: flex;
     flex-flow: column wrap;
     justify-content: center; // It moves away content from corners of the screen vertically and horizontally
+    margin: 1.7rem 0.6rem;
 
-    margin: 1.7rem .6rem;
-
-    @include respond-to('small')
-    {
+    @include respond-to("small") {
         // It moves away content from corners of the screen horizontally
         margin: 0 18%;
     }

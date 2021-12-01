@@ -3,7 +3,9 @@
 // Input & output
 .app-wrapper
 {
-    width: 100%;@include respond-to('small')
+    width: 100%;
+
+@include respond-to('small')
     {
         max-width: 40rem;
     }

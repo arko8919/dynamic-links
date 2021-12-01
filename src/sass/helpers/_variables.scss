@@ -18,19 +18,19 @@ $mod-2: 1.5; // desktop
 
 // Breakpoints map used with mixin respond-to($breakpoints)
 $breakpoints: (
-        'very-small': (
+        "very-small": (
                 min-width: 468px,
         ),
-        'small': (
+        "small": (
                 min-width: 768px,
         ),
-        'medium': (
+        "medium": (
                 min-width: 1024px,
         ),
-        'large': (
+        "large": (
                 min-width: 1440px,
         ),
-        'huge': (
+        "huge": (
                 min-width: 1700px,
         ),
 );

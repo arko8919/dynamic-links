@@ -1,19 +1,19 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
-.instruction
-{
-    display: flex;  align-items: center;  flex-flow: column nowrap;
+.instruction {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-.app-usage
-{
-    @include respond-to('small')
-    {
-        display: grid;  grid-template-columns: repeat(2, 1fr);  grid-template-rows: repeat(2, 1fr);
+.app-usage {
+    @include respond-to("small") {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
     }
 
-    li
-    {
+    li {
         max-width: 30rem;
     }
 }

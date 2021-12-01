@@ -1,6 +1,8 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
-.heading
-{
-    letter-spacing: .2rem;  text-transform: uppercase;  color: $jet-stream;  text-shadow: -1px 1px 0 $curious-blue, 1px 1px 0 $curious-blue, 1px -1px 0 $curious-blue, -1px -1px 0 $curious-blue;
+.heading {
+    color: $jet-stream;
+    letter-spacing: 0.2rem;
+    text-shadow: -1px 1px 0 $curious-blue, 1px 1px 0 $curious-blue, 1px -1px 0 $curious-blue, -1px -1px 0 $curious-blue;
+    text-transform: uppercase;
 }
