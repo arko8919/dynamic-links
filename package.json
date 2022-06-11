@@ -5,7 +5,6 @@
   "description": "dynamic links",
   "main": "script.js",
   "scripts": {
-    "sass": "sass src/style.scss src/main.css",
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },

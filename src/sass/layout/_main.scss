@@ -4,11 +4,10 @@
     align-items: center;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center; // It moves away content from corners of the screen vertically and horizontally
+    justify-content: center; 
     margin: 1.7rem 0.6rem;
 
     @include respond-to("small") {
-        // It moves away content from corners of the screen horizontally
         margin: 0 18%;
     }
 }

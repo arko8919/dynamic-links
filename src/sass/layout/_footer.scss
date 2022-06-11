@@ -19,17 +19,20 @@ footer p {
     justify-content: center;
     list-style: none;
     margin: 0;
-    padding: 0; // Remove padding-inline-start
+    // Remove padding-inline-start
+    padding: 0; 
 
     li {
-        border: none; // Add social media icons and links
+        border: none; 
         margin: 1rem;
         padding: 0.4rem;
-        text-indent: -9999px; // Sends the text off-screen. It is keeping text for accessibility purpose
-
+        // Sends the text off-screen. It is keeping text for accessibility purpose
+        text-indent: -9999px; 
         transition: 0.2s all ease-out;
-        white-space: nowrap; // Because only the first line is indented
+        // Because only the first line is indented
+        white-space: nowrap; 
 
+        // Add social media icons and links
         @include addSocialIcons(1, "assets/linkedin.png");
         @include addSocialIcons(2, "assets/github.png");
         @include addSocialIcons(3, "assets/facebook.png");
@@ -44,9 +47,9 @@ footer p {
 
     a {
         background: center / contain no-repeat;
-        // Display block and height 100% makes <a> clickable
         display: block;
-        outline: none; // Remove outlines which show when link is clicked
+        // Remove outlines which show when link is clicked
+        outline: none; 
 
         @include box(2rem, 2rem);
     }

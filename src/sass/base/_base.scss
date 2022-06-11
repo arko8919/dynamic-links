@@ -1,9 +1,9 @@
 @use "../helpers" as *;
 
 html {
-    box-sizing: border-box; // Responsive font for content
+    box-sizing: border-box;
     font-size: 100%;
-
+    // Responsive font for content
     @include fluid-type($min-width, $max-width, $min-font, $max-font);
 }
 
@@ -14,42 +14,43 @@ html {
 }
 
 body {
-    background-color: $porcelain; //  Disables user text selection
+    background-color: $porcelain;
     color: black;
     font-family: "Ubuntu", sans-serif;
     margin: 0;
     padding: 0;
-    -webkit-touch-callout: none; // iOS Safari
 
+    // Disables user text selection
+    // iOS Safari
+    -webkit-touch-callout: none;
     @include prefix(user-select, none, webkit moz ms);
 }
 
 h1 {
-    font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem; // Responsive font for headers
+    // Responsive font for headers
+    font-size: $mod-1 * $mod-1 * $mod-1 * $mod-1 * 1rem;
 
-    @include fluid-type(
-        $min-width,
+    @include fluid-type($min-width,
         $max-width,
         $mod-1 * $mod-1 * $mod-1 * $min-font,
-        $mod-2 * $mod-2 * $mod-2 * $min-font
-    );
+        $mod-2 * $mod-2 * $mod-2 * $min-font );
 }
 
 h2 {
+    // Responsive font for headers
     color: $jet-stream;
     font-size: $mod-1 * $mod-1 * $mod-1 * 1rem;
-    text-shadow: 3px 3px 5px black; // Responsive font for headers
+    text-shadow: 3px 3px 5px black;
 
-    @include fluid-type(
-        $min-width,
+    @include fluid-type($min-width,
         $max-width,
         $mod-1 * $mod-1 * $mod-1 * $min-font,
-        $mod-2 * $mod-2 * $mod-2 * $min-font
-    );
+        $mod-2 * $mod-2 * $mod-2 * $min-font );
 }
 
 h3 {
-    font-size: $mod-1 * $mod-1 * 1rem; // Responsive font for headers
+    // Responsive font for headers
+    font-size: $mod-1 * $mod-1 * 1rem;
 
     @include fluid-type($min-width, $max-width, $mod-1 * $mod-1 * $min-font, $mod-2 * $mod-2 * $min-font);
 }

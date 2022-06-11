@@ -6,7 +6,7 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
-                    // without additional setting, this will reference .babelrc
+                    // Without additional setting, this will reference .babelrc
                     loader: "babel-loader"
                 }
             },
